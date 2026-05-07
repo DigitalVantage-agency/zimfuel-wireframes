@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   Fuel, Smartphone, LayoutDashboard, ShieldCheck, ArrowRight,
-  CheckCircle2, Truck, Users, TrendingUp, Package
+  CheckCircle2, Truck, Users, TrendingUp, Package, FileText
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -161,7 +161,25 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="mt-12 p-5 rounded-xl bg-muted/50 border border-border">
+        {/* Cost Document CTA */}
+        <Link href="/costs" className="group block mt-8">
+          <div className="p-5 rounded-xl border-2 border-dashed border-primary/30 bg-primary/5 hover:border-primary/50 hover:bg-primary/10 transition-all flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-primary-foreground shrink-0">
+                <FileText className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="font-bold text-foreground">Development & Cost Analysis Document</div>
+                <div className="text-sm text-muted-foreground">Full investment breakdown — development, infrastructure, staffing, ROI projections. Print-ready for government presentation.</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-sm font-semibold text-primary shrink-0 ml-4 group-hover:gap-3 transition-all">
+              View Document <ArrowRight className="h-4 w-4" />
+            </div>
+          </div>
+        </Link>
+
+        <div className="mt-6 p-5 rounded-xl bg-muted/50 border border-border">
           <div className="flex items-start gap-3">
             <ShieldCheck className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
             <div>
