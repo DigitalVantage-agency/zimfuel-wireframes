@@ -1,6 +1,6 @@
 "use client";
 
-import { Fuel, Users, Server, Shield, TrendingUp, DollarSign, Clock, CheckCircle2, AlertTriangle, ArrowUpRight, Printer } from "lucide-react";
+import { Fuel, Users, Server, Shield, TrendingUp, DollarSign, Clock, CheckCircle2, AlertTriangle, ArrowUpRight, Printer, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -154,6 +154,10 @@ export default function CostsPage() {
       {/* Print / nav bar — hidden on print */}
       <div className="print:hidden sticky top-0 z-10 bg-white border-b border-border px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <ArrowLeft className="h-4 w-4" /> Back to Overview
+          </Link>
+          <Separator orientation="vertical" className="h-4" />
           <Link href="/" className="flex items-center gap-2">
             <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-400">
               <Fuel className="h-3.5 w-3.5 text-gray-900" />

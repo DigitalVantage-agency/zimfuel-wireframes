@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, Package, Truck, Users, ShieldCheck,
-  TrendingUp, AlertTriangle, Settings, ChevronRight, Fuel, Bell
+  TrendingUp, AlertTriangle, Settings, ChevronRight, Fuel, Bell, ArrowLeft
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -115,13 +115,19 @@ export function DashboardLayout({ children, persona, userName, userRole }: Dashb
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
         {/* Top Bar */}
         <header className="flex items-center justify-between px-6 py-3 bg-white border-b border-border shrink-0">
-          <div>
-            <h1 className="text-base font-semibold text-foreground">
-              {nav.find(n => n.href === pathname)?.label ?? "Dashboard"}
-            </h1>
-            <p className="text-xs text-muted-foreground">
-              {new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}
-            </p>
+          <div className="flex items-center gap-4">
+            <Link href="/" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <ArrowLeft className="h-4 w-4" /> Back to Overview
+            </Link>
+            <div className="w-px h-4 bg-border" />
+            <div>
+              <h1 className="text-base font-semibold text-foreground">
+                {nav.find(n => n.href === pathname)?.label ?? "Dashboard"}
+              </h1>
+              <p className="text-xs text-muted-foreground">
+                {new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}
+              </p>
+            </div>
           </div>
           <div className="flex items-center gap-3">
             <button className="relative p-2 rounded-lg hover:bg-muted transition-colors">
